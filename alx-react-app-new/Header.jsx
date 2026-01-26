@@ -1,20 +1,14 @@
-
-<header style={{ backgroundColor: 'navy', color: 'white', textAlign: 'center' }}>
-   <h1>My Favorite Cities</h1>
- </header>
-function Header() {
+export default function Header() {
   return (
     <header
       style={{
         backgroundColor: "navy",
         color: "white",
         textAlign: "center",
-        padding: "20px"
+        padding: "20px",
       }}
     >
-      <h1>My Favorite Cities</h1>
+      <h1 style={{ margin: 0 }}>My Favorite Cities</h1>
     </header>
   );
 }
-
-export default Header;
