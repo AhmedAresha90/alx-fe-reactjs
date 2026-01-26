@@ -1,18 +1,26 @@
-import ProfilePage from "./ProfilePage";
-import UserContext from "./UserContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 
 function App() {
-  const userData = {
-    name: "Jane Doe",
-    email: "jane.doe@example.com",
-  };
-
   return (
-    <UserContext.Provider value={userData}>
-      <ProfilePage />
-    </UserContext.Provider>
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+
+      <Footer />
+    </BrowserRouter>
   );
 }
 
 export default App;
-
