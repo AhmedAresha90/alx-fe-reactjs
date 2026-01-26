@@ -1,0 +1,19 @@
+import { Link } from "react-router-dom";
+
+export default function Navbar() {
+  return (
+    <nav
+      style={{
+        padding: "15px",
+        backgroundColor: "#222",
+        display: "flex",
+        gap: "15px",
+      }}
+    >
+      <Link style={{ color: "white" }} to="/">Home</Link>
+      <Link style={{ color: "white" }} to="/about">About</Link>
+      <Link style={{ color: "white" }} to="/services">Services</Link>
+      <Link style={{ color: "white" }} to="/contact">Contact</Link>
+    </nav>
+  );
+}
