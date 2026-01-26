@@ -1,23 +1,21 @@
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Footer from './components/Footer';
-import UserProfile from './components/UserProfile';
+import Header from "./components/Header";
+import UserProfile from "./components/UserProfile";
+import MainContent from "./components/MainContent";
+import Footer from "./components/Footer";
 
-
-function App() {
+export default function App() {
   return (
     <div>
-      <UserProfile
-        name="Alice"
-        age="25"
-        bio="Loves hiking and photography"
-      />
+      <Header />
+      <div style={{ padding: "0 20px" }}>
+        <UserProfile
+          name="John Doe"
+          age={25}
+          bio="Frontend developer who loves building UI."
+        />
+      </div>
+      <MainContent />
+      <Footer />
     </div>
   );
 }
-
-export default App;
-<<<<<<< HEAD
-
-=======
->>>>>>> 426d54e1afe3323c6a79465875d56c6fef17a29b
