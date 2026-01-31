@@ -1,5 +1,6 @@
 // RecipeList component
   import { useRecipeStore } from './recipeStore';
+export default function RecipeList() {
 
   const RecipeList = () => {
     const recipes = useRecipeStore(state => state.recipes);
