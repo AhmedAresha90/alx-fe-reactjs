@@ -1,19 +1,24 @@
 import { useState } from "react";
-import useRecipeStore from "../store/useRecipeStore";
+import { useRecipeStore } from "./recipeStore";
 
 export default function EditRecipeForm({ recipe }) {
   const [title, setTitle] = useState(recipe.title);
-  const updateRecipe = useRecipeStore((s) => s.updateRecipe);
+  const updateRecipe = useRecipeStore((state) => state.updateRecipe);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    updateRecipe(recipe.id, { title });
+  };
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <input
+        type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button onClick={() => updateRecipe(recipe.id, { title })}>
-        Save
-      </button>
-    </div>
+      <button type="submit">Save</button>
+    </form>
   );
 }
